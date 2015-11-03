@@ -1,0 +1,6 @@
+---
+applications:
+- buildpack: https://github.com/cloudfoundry-incubator/staticfile-buildpack
+  host: CIC_Operations_Portal_UK
+  name: CIC_UK_Operations_Portal
+  memory: 32M
