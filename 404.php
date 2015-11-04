@@ -7,13 +7,280 @@
 		<!-- Bootstrap CSS/Scripts -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>	
-		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">	
-		<link rel="stylesheet" href="css/styles.css">
-		<link rel="stylesheet" href="css/navbar.css">
-		<link rel="stylesheet" href="css/sidemenu.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">		
 			
+		<!-- Styles CSS -->
+		<style>
+			body {
+				padding-top: 50px;
+				overflow: hidden;
+			}
+			#wrapper {
+				min-height: 100%;
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				display: inline-block;
+			}
+			#main-wrapper {
+				position: relative;
+				height: 100%;
+				overflow-y: auto;
+				padding: 50px 0 0px 0;
+			}
+			#main {
+				position: relative;
+				height: 100%;
+				overflow-y: auto;
+				padding: 0 55px;
+				top: 20px;
+				left: 0px;
 				
-		<!-- JS for stock widget-->
+			}
+			#sidebar-wrapper {
+				height: 100%;
+				padding: 50px 0 0px 0;
+				position: fixed;
+				border-right: 0px solid gray;
+			}
+			#sidebar {
+				position: relative;
+				height: 100%;
+				overflow:hidden;
+			}
+			#sidebar .list-group-item {
+					border-radius: 0;
+					border-left: 0;
+					border-right: 0;
+					border-top: 0;
+			}
+			@media (max-width: 992px) {
+				body {
+					padding-top: 0px;
+				}
+			}
+			@media (min-width: 992px) {
+				#main-wrapper {
+					float:right;
+					padding-left: 35px;
+				}
+			}
+			@media (max-width: 992px) {
+				#main-wrapper {
+					padding-top: 0px;
+				}
+			}
+			@media (max-width: 992px) {
+				#sidebar-wrapper {
+					position: static;
+					height:auto;
+					/*max-height: 300px;*/
+					border-right:0;
+				}
+			}
+
+			.coll-button {
+				padding: 10px 10px;
+				align-content: right;
+				
+			}​
+
+		</style>
+		
+		<!-- Side Menu CSS -->
+		<style>
+			/* http://bootsnipp.com/snippets/featured/responsive-navigation-menu */
+
+			.nav-side-menu {
+			  overflow: auto;
+			  font-family: verdana;
+			  font-size: 12px;
+			  font-weight: 200;
+			  background-color: #2e353d;
+			  position: fixed;
+			  top: 0px;
+			  width: 275px;
+			  height: 100%;
+			  color: #e1ffff;
+			  padding-top: 60px;
+			}
+			.nav-side-menu .brand {
+			  background-color: #23282e;
+			  line-height: 50px;
+			  display: block;
+			  text-align: center;
+			  font-size: 14px;
+			}
+			.nav-side-menu .toggle-btn {
+			  display: none;
+			}
+			.nav-side-menu ul,
+			.nav-side-menu li {
+			  list-style: none;
+			  padding: 0px;
+			  margin: 0px;
+			  line-height: 35px;
+			  cursor: pointer;
+			}
+			.nav-side-menu ul :not(collapsed) .arrow:before,
+			.nav-side-menu li :not(collapsed) .arrow:before {
+			  /*font-family: FontAwesome;
+			  content: "\f078";
+			  display: inline-block;
+			  padding-left: 10px;
+			  padding-right: 10px;
+			  vertical-align: middle;
+			  float: right;*/
+			}
+			.nav-side-menu ul .active,
+			.nav-side-menu li .active {
+			  border-left: 3px solid #d19b3d;
+			  background-color: #4f5b69;
+			}
+			.nav-side-menu ul .sub-menu li.active,
+			.nav-side-menu li .sub-menu li.active {
+			  color: #d19b3d;
+			}
+			.nav-side-menu ul .sub-menu li.active a,
+			.nav-side-menu li .sub-menu li.active a {
+			  color: #d19b3d;
+			}
+			.nav-side-menu ul .sub-menu li,
+			.nav-side-menu li .sub-menu li {
+			  background-color: #181c20;
+			  border: none;
+			  line-height: 28px;
+			  border-bottom: 1px solid #23282e;
+			  margin-left: 0px;
+			}
+			.nav-side-menu ul .sub-menu li:hover,
+			.nav-side-menu li .sub-menu li:hover {
+			  background-color: #020203;
+			}
+			.nav-side-menu ul .sub-menu li:before,
+			.nav-side-menu li .sub-menu li:before {
+			  /*font-family: FontAwesome;
+			  content: "\f105";
+			  display: inline-block;
+			  padding-left: 10px;
+			  padding-right: 10px;
+			  vertical-align: middle;*/
+			}
+			.nav-side-menu li {
+			  padding-left: 0px;
+			  border-left: 3px solid #2e353d;
+			  border-bottom: 1px solid #23282e;
+			}
+			.nav-side-menu li a {
+			  text-decoration: none;
+			  color: #e1ffff;
+			}
+			.nav-side-menu li a i {
+			  padding-left: 10px;
+			  width: 20px;
+			  padding-right: 20px;
+			}
+			.nav-side-menu li:hover {
+			  border-left: 3px solid #d19b3d;
+			  background-color: #4f5b69;
+			  -webkit-transition: all 1s ease;
+			  -moz-transition: all 1s ease;
+			  -o-transition: all 1s ease;
+			  -ms-transition: all 1s ease;
+			  transition: all 1s ease;
+			}
+			@media (max-width: 767px) {
+			  .nav-side-menu {
+				position: relative;
+				width: 100%;
+				margin-bottom: 10px;
+			  }
+			  .nav-side-menu .toggle-btn {
+				display: block;
+				cursor: pointer;
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				z-index: 10 !important;
+				padding: 3px;
+				background-color: #ffffff;
+				color: #000;
+				width: 40px;
+				text-align: center;
+			  }
+			  .brand {
+				text-align: left !important;
+				font-size: 22px;
+				padding-left: 20px;
+				line-height: 50px !important;
+			  }
+			}
+
+			@media (min-width: 767px) {
+			  .nav-side-menu .menu-list .menu-content {
+				display: block;
+			  }
+			}
+
+			body {
+			  margin: 0px;
+			  padding: 0px;
+			}
+
+			p.modifiedFont {
+				font-family: TimesNewRoman;
+				font-size: 16px;
+			}
+		</style>
+		
+		<!-- NavBar CSS -->
+		<style>
+			 /* 
+			  * NavBar CSS Styles
+			  * http://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color 
+			 */
+			 
+			 .navbar-inverse {
+				background-color: #006699;
+				border-color: #030033;
+			}
+
+			.navbar-default {
+				background-color: #006699;
+				border-color: #E7E7E7;
+			}
+
+			.navbar-default .navbar-brand {
+				color: #FFFFFF;
+			}
+
+			/* Stops text disaapearing under the navbar */
+			body { 
+				padding-top: 40px; 
+				
+			}
+
+			/* Allows the iframe to be full height of screen */
+			html, body {
+				height: 100%;
+			}
+
+			table, th, td { 
+				/*width:12.5%;*/
+				font-family: verdana;
+				font-size: 15px;
+				font-weight: 200;
+				padding-top:5px;
+				padding: 2px;
+				color: #FFFFFF;
+			} 
+			navTextColor {
+				text-color: #FFFFFF;
+			}
+		</style>
+		
 		<script language="JavaScript">
 			function start(){
 				getData();
@@ -78,15 +345,6 @@
 			}      
 
 		</script>		
-		<!--JS for text replacement-->
-		<script languages="JavaScript">
-		function loadLink(input) {
-		  	  document.getElementById("demo").innerHTML = "The link should have opened in a new tab, if it hasn't please use the link below</p> <a href='"+input+"' target='_blank' >"+input+"</a></p>"
-		}
-		function loadNote(input) {
-		  	  document.getElementById("demo").innerHTML = "The link should have opened in your notes application, if it hasn't please use the link below</p><p> <a href='"+input+"'>"+input+"</a></p>"
-		}
-		</script>
 		
 	</head>
 	<body onload="start();">
@@ -108,7 +366,7 @@
 			<nav class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li>
-						<a id="title">Leicester CIC Operations Portal</a>
+						<a class="navTextColor">Leicester CIC Operations Portal</a>
 					</li>
 					<!--
 					<li class="dropdown">
@@ -162,7 +420,7 @@
 									  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> News</a>
 									</li>  
 									<ul class="sub-menu collapse" id="news">
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> <a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/A0F4BC0AF621EA9280257EF2005BBD17 " onClick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/A0F4BC0AF621EA9280257EF2005BBD17 ')">Newsletter 1</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Newsletter 1</li>
 									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Newsletter 2</li>
 									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Newsletter 3</li>
 									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> Newsletter 4</li>
@@ -180,7 +438,7 @@
 										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="files/NewStart/How to install SUT.odt" > How to install SUT</a></li>
 										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="files/NewStart/How to backup your laptop.odt" > How to backup your laptop</a></li>
 										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="files/NewStart/IBM UKI IGA Technical Powerpoint.odp" > IBM UKI IGA Technical Powerpoint</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="https://w3-03.ibm.com/tools/cm/iram/faces/home.jsp" onclick="loadLink('https://w3-03.ibm.com/tools/cm/iram/faces/home.jsp')" target="_blank" >IBM Rational Asset Manager</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="https://w3-03.ibm.com/tools/cm/iram/faces/home.jsp" target="_blank" > IBM Rational Asset Manager</a></li>
 									</ul>
 
 
@@ -189,19 +447,19 @@
 									</li>  
 									
 									<ul class="sub-menu collapse" id="EmpVac">
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes:///80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/3A74C29D8B05112280257EB5002E3874" onclick="loadNote('Notes:///80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/3A74C29D8B05112280257EB5002E3874')"> Employee Vacation and Time Off</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes:///80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/3A74C29D8B05112280257EB5002E3874"> Employee Vacation and Time Off</a></li>
 									</ul>
 									
 									<li data-toggle="collapse" data-target="#HowTo" class="collapsed">
 									  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> How To Documents</a>
 									</li>  
 									<ul class="sub-menu collapse" id="HowTo">
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/06B09B4221D2813380257EEE0035E85C "onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/06B09B4221D2813380257EEE0035E85C')"> Car hire booking instructions</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/DF56398A9FD1F6A880257EE70052D466 "onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/DF56398A9FD1F6A880257EE70052D466')"> ILC - Timesheets</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/57545520774AAE8980257EE70060437B"onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/57545520774AAE8980257EE70060437B')"> Email signature setup</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/4204F0BA760A355F80257EC4006784AE "onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/4204F0BA760A355F80257EC4006784AE')" > How to autostart AT&T and Notes client</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/65B666B0B50D431F80257EB3003A755B " onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/65B666B0B50D431F80257EB3003A755B')"> How to request and install Sametime Unified Telephony (SUT)</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/E8B6FD5C20A9E6CB80257ED1005094A9 "onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/E8B6FD5C20A9E6CB80257ED1005094A9')"> Email signature setup</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/06B09B4221D2813380257EEE0035E85C "> Car hire booking instructions</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/DF56398A9FD1F6A880257EE70052D466 "> ILC - Timesheets</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/57545520774AAE8980257EE70060437B"> Email signature setup</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/4204F0BA760A355F80257EC4006784AE " > How to autostart AT&T and Notes client</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/65B666B0B50D431F80257EB3003A755B " > How to request and install Sametime Unified Telephony (SUT)</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/E8B6FD5C20A9E6CB80257ED1005094A9 "> Email signature setup</a></li>
 
 									</ul>
 
@@ -209,18 +467,18 @@
 									  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> Policy Documents</span></a>
 									</li>  
 									<ul class="sub-menu collapse" id="PolDoc">
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3.ibm.com/ibm/values/"  onclick="loadLink('http://w3.ibm.com/ibm/values/')"  target="_blank"> IBM Values at Work</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="https://w3-connections.ibm.com/wikis/home?lang=en#/wiki/GBS%20Delivery%20Center%20Operating%20Guidelines%20%26%20Attachments" onclick="loadLink('HTTP://LINK')"  target="_blank"> Partnership Attachments Wiki</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/health/IBMUKHealthandSafetyPolicyMar2015.pdf " onclick="loadLink('https://w3-connections.ibm.com/wikis/home?lang=en#/wiki/GBS%20Delivery%20Center%20Operating%20Guidelines%20%26%20Attachments')"  target="_blank"> Health and Safety Policy</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/health/IBMUKHealthandSafetyPolicyMar2015.pdf" onclick="loadLink('http://w3-01.ibm.com/hr/web/uk/health/IBMUKHealthandSafetyPolicyMar2015.pdf')"  target="_blank"> BCG Business Conduct Guidelines</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/AF0524A8C994AB3B80257ED00069D5DE "onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/AF0524A8C994AB3B80257ED00069D5DE')"> ITCS300 Security Policy</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/expenses/expenses.html " onclick="loadLink('ttp://w3-01.ibm.com/hr/web/uk/expenses/expenses.html')"  target="_blank"> Expenses Policies</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/travel/" onclick="loadLink('http://w3-01.ibm.com/hr/web/travel/')"  target="_blank"> OTR Travel Policies</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/ABBD29AED8237FEF80257ECD0044C28F " onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/ABBD29AED8237FEF80257ECD0044C28F')"> Emergency Contact Information</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/F0B4F8B25ED0258680257ECB0053318C " onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/F0B4F8B25ED0258680257ECB0053318C')"> Employee Handbook</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/8C7F9FF221251A7D80257EC5007C8B9C " onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/8C7F9FF221251A7D80257EC5007C8B9C')"> Ways of Working (Employee Guide)</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/8E0349F535A5814680257EBA004E61B8 " onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/8E0349F535A5814680257EBA004E61B8')"> CIC UK Leicester, Best Practice</a></li>
-										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/expenses/per_diem.html# " onclick="loadLink('http://w3-01.ibm.com/hr/web/uk/expenses/per_diem.html#')"  target="_blank"> Per Diem Rates and Meal Limits for Trips</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3.ibm.com/ibm/values/" target="_blank"> IBM Values at Work</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="https://w3-connections.ibm.com/wikis/home?lang=en#/wiki/GBS%20Delivery%20Center%20Operating%20Guidelines%20%26%20Attachments" target="_blank"> Partnership Attachments Wiki</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/health/IBMUKHealthandSafetyPolicyMar2015.pdf " target="_blank"> Health and Safety Policy</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/health/IBMUKHealthandSafetyPolicyMar2015.pdf" target="_blank"> BCG Business Conduct Guidelines</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/AF0524A8C994AB3B80257ED00069D5DE "> ITCS300 Security Policy</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/expenses/expenses.html " target="_blank"> Expenses Policies</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/travel/" target="_blank"> OTR Travel Policies</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/ABBD29AED8237FEF80257ECD0044C28F " > Emergency Contact Information</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/F0B4F8B25ED0258680257ECB0053318C " > Employee Handbook</a></li>
+										<li>F<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/8C7F9FF221251A7D80257EC5007C8B9C " > Ways of Working (Employee Guide)</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/8E0349F535A5814680257EBA004E61B8 " > CIC UK Leicester, Best Practice</a></li>
+										<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3-01.ibm.com/hr/web/uk/expenses/per_diem.html# " target="_blank"> Per Diem Rates and Meal Limits for Trips</a></li>
 									</ul>
 
 
@@ -228,23 +486,23 @@
 									  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> Timesheeting/Utilisation <span class="arrow"></span></a>
 									</li>
 									<ul class="sub-menu collapse" id="TimeUtil">
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/94610B79005A08A480257ECB00689B8B"onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/94610B79005A08A480257ECB00689B8B')"> Comms- articles etc</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/F31EB7631402CBCD80257EB500574931"onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/F31EB7631402CBCD80257EB500574931')"> Intranet Labor Claiming - Claim codes</a></li>
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/EF94F3AA0301B2CF80257EB5004BA809"onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/EF94F3AA0301B2CF80257EB5004BA809')"> How to claim hours using Intranet Labor claiming (ILC)</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/94610B79005A08A480257ECB00689B8B"> Comms- articles etc</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/F31EB7631402CBCD80257EB500574931"> Intranet Labor Claiming - Claim codes</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/EF94F3AA0301B2CF80257EB5004BA809"> How to claim hours using Intranet Labor claiming (ILC)</a></li>
 									</ul>
 									
 									<li data-toggle="collapse" data-target="#openSeat" class="collapsed">
 									  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> Open Seats</a>
 									</li>  
 									<ul class="sub-menu collapse" id="openSeat">
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="#" > Currently Empty</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="#" target="_blank"> Currently Empty</a></li>
 									</ul>
 
 									<li data-toggle="collapse" data-target="#notCat" class="collapsed">
 									  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> (Not Categorized)</a>
 									</li>  
 									<ul class="sub-menu collapse" id="notCat">
-									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/ADB25B6B18935BDC80257EE700614198  " onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/ADB25B6B18935BDC80257EE700614198')" > Induction Checklist</a></li>
+									  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/ADB25B6B18935BDC80257EE700614198  " target="_blank"> Induction Checklist</a></li>
 									</ul>
 									
 								</ul>
@@ -252,19 +510,17 @@
 					</div>
 				</div>
 			</div>
-			
 			<!-- Main Page Content -->
 			<div id="main-wrapper" class="col-xs-12 col-sm-8 col-md-9 col-lg-10 pull-right" frameBorder="0" >
-				<div id="main">
-				  <div class="page-header">
-					<h3>Operations Portal Home Page</h3>
-				  </div>
-				  <p>
-					404 ERROR PAGE
-				  </p>
+					<div id="main">
+					  <div class="page-header">
+						<h3>Admin</h3>
+					  </div>
+					  <p>404 TESTER</p>
+					</div>
+				  
+				  
 				</div>
-			</div>
-			
 		</div>
 	</body>
 </html>
