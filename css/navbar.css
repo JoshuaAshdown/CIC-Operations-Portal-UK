@@ -1,0 +1,39 @@
+			 /* 
+			  * NavBar CSS Styles
+			  * http://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color 
+			 */
+			 
+			 .navbar-inverse {
+				background-color: #006699;
+				border-color: #030033;
+			}
+
+			.navbar-default {
+				background-color: #006699;
+				border-color: #E7E7E7;
+			}
+
+			.navbar-default .navbar-brand {
+				color: #FFFFFF;
+			}
+
+			/* Stops text disaapearing under the navbar */
+			body { 
+				padding-top: 40px; 
+				
+			}
+
+			/* Allows the iframe to be full height of screen */
+			html, body {
+				height: 100%;
+			}
+
+			table, th, td { 
+				/*width:12.5%;*/
+				font-family: verdana;
+				font-size: 15px;
+				font-weight: 200;
+				padding-top:5px;
+				padding: 2px;
+				color: #FFFFFF;
+			} 
