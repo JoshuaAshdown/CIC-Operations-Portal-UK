@@ -139,7 +139,7 @@
 		</div>
 		<!-- Side Navigation Bar -->
 		<div id="wrapper">
-			<div id="sidebar-wrapper" class="col-xs-0 col-sm-6 col-md-3 col-lg-2"> 
+			<div id="sidebar-wrapper" class="col-xs-0 col-sm-5 col-md-3 col-lg-2"> 
 			 
 				<div id="sidebar">
 					<div class="nav-side-menu">
