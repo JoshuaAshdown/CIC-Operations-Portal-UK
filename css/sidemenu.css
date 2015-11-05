@@ -8,11 +8,11 @@
 			  font-weight: 200;
 			  background-color: #2e353d;
 			  position: relative;
-			  top: 0;
+			  /*top: 0;*/
 			  width: 265px;
 			  height: 100%;
 			  color: #e1ffff;
-			  padding-top: 0;
+			  /*padding-top: 0;*/
 			}
 			.nav-side-menu .brand {
 			  background-color: #23282e;
