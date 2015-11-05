@@ -7,12 +7,12 @@
 			  font-size: 12px;
 			  font-weight: 200;
 			  background-color: #2e353d;
-			  position: fixed;
-			  top: 0px;
+			  position: relative;
+			  top: 0;
 			  width: 265px;
 			  height: 100%;
 			  color: #e1ffff;
-			  padding-top: 60px;
+			  padding-top: 0;
 			}
 			.nav-side-menu .brand {
 			  background-color: #23282e;
