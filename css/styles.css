@@ -1,82 +1,82 @@
 
-			body {
-				padding-top: 0;
-				overflow: hidden;
-			}
-			#wrapper {
-				min-height: 100%;
-				height: 100%;
-				width: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: inline-block;
-			}
-			#main-wrapper {
-				position: relative;
-				height: 100%;
-				overflow-y: auto;
-				padding: 50px 0 0px 0;
-			}
-			#main {
-				position: relative;
-				height: 100%;
-				overflow-y: auto;
-				padding: 0 55px;
-				top: 0;
-				left: 0;
-			}
-			#sidebar-wrapper {
-				height: 100%;
-				padding: 50px 0 0px 0;
-				position: fixed;
-				border-right: 0px solid gray;
-			}
-			#sidebar {
-				position: relative;
-				height: 100%;
-				/*overflow:hidden;*/
-				z-index: 10;
-			}
-			#sidebar .list-group-item {
-					border-radius: 0;
-					border-left: 0;
-					border-right: 0;
-					border-top: 0;
-			}
-			#title {
-				color: #FFFFFF;
-				
-			}
-			@media (max-width: 992px) {
-				body {
-					padding-top: 0px;
-				}
-			}
-			@media (min-width: 992px) {
-				#main-wrapper {
-					float:right;
-					padding-left: 35px;
-				}
-			}
-			@media (max-width: 992px) {
-				#main-wrapper {
-					padding-top: 0px;
-				}
-			}
-			@media (max-width: 992px) {
-				#sidebar-wrapper {
-					position: static;
-					height:100%;
-					/*max-height: 300px;*/
-					border-right:0;
-				}
-			}
+body {
+	padding-top: 0;
+	overflow: hidden;
+}
+#wrapper {
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+}
+#main-wrapper {
+	position: relative;
+	height: 100%;
+	overflow-y: auto;
+	padding: 50px 0 0px 0;
+}
+#main {
+	position: relative;
+	height: 100%;
+	overflow-y: auto;
+	padding: 0 55px;
+	top: 0;
+	left: 0;
+}
+#sidebar-wrapper {
+	height: 100%;
+	padding: 50px 0 0px 0;
+	position: fixed;
+	border-right: 0px solid gray;
+}
+#sidebar {
+	position: relative;
+	height: 100%;
+	/*overflow:hidden;*/
+	z-index: 10;
+}
+#sidebar .list-group-item {
+		border-radius: 0;
+		border-left: 0;
+		border-right: 0;
+		border-top: 0;
+}
+#title {
+	color: #FFFFFF;
+	
+}
+@media (max-width: 992px) {
+	body {
+		padding-top: 0px;
+	}
+}
+@media (min-width: 992px) {
+	#main-wrapper {
+		float:right;
+		padding-left: 35px;
+	}
+}
+@media (max-width: 992px) {
+	#main-wrapper {
+		padding-top: 0px;
+	}
+}
+@media (max-width: 992px) {
+	#sidebar-wrapper {
+		position: static;
+		height:100%;
+		/*max-height: 300px;*/
+		border-right:0;
+	}
+}
 
-			.coll-button {
-				padding: 10px 10px;
-				align-content: right;
-				
-			}​
+.coll-button {
+	padding: 10px 10px;
+	align-content: right;
+	
+}​
 
 		

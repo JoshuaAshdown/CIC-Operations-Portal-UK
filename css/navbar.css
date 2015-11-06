@@ -1,41 +1,41 @@
-			 /* 
-			  * NavBar CSS Styles
-			  * http://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color 
-			 */
-			 
-			 .navbar-inverse {
-				background-color: #006699;
-				border-color: #030033;
-			}
+ /* 
+  * NavBar CSS Styles
+  * http://stackoverflow.com/questions/24127521/change-bootstrap-navbar-background-color-and-font-color 
+ */
+ 
+ .navbar-inverse {
+	background-color: #006699;
+	border-color: #030033;
+}
 
-			.navbar-default {
-				/*background-color: #006699;
-				border-color: #E7E7E7;*/
-				background-image: url('http://cic_operations_portal_uk.eu-gb.mybluemix.net/images/imgNavBar.jpg') !important;
-				background-repeat: repeat-x !important;
-			}
+.navbar-default {
+	/*background-color: #006699;
+	border-color: #E7E7E7;*/
+	background-image: url('http://cic_operations_portal_uk.eu-gb.mybluemix.net/images/imgNavBar.jpg') !important;
+	background-repeat: repeat-x !important;
+}
 
-			.navbar-default .navbar-brand {
-				color: #FFFFFF;
-			}
+.navbar-default .navbar-brand {
+	color: #FFFFFF;
+}
 
-			/* Stops text disaapearing under the navbar */
-			body { 
-				padding-top: 0; 
-				
-			}
+/* Stops text disaapearing under the navbar */
+body { 
+	padding-top: 0; 
+	
+}
 
-			/* Allows the iframe to be full height of screen */
-			html, body {
-				height: 100%;
-			}
+/* Allows the iframe to be full height of screen */
+html, body {
+	height: 100%;
+}
 
-			table, th, td { 
-				/*width:12.5%;*/
-				font-family: verdana;
-				font-size: 15px;
-				font-weight: 300;
-				padding-top:5px;
-				padding: 2px;
-				color: #000000;
-			} 
+table, th, td { 
+	/*width:12.5%;*/
+	font-family: verdana;
+	font-size: 15px;
+	font-weight: 300;
+	padding-top:5px;
+	padding: 2px;
+	color: #000000;
+} 
