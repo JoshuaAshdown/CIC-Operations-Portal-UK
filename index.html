@@ -81,10 +81,10 @@
 		<!--JS for text replacement-->
 		<script languages="JavaScript">
 		function loadLink(input) {
-		  	  document.getElementById("demo").innerHTML = "The link should have opened in a new tab, if it hasn't please use the link below</p> <a href='"+input+"' target='_blank' >"+input+"</a></p>"
+		  	  document.getElementById("content").innerHTML = "The link should have opened in a new tab, if it hasn't please use the link below</p> <a href='"+input+"' target='_blank' >"+input+"</a></p>"
 		}
 		function loadNote(input) {
-		  	  document.getElementById("demo").innerHTML = "The link should have opened in your notes application, if it hasn't please use the link below</p><p> <a href='"+input+"'>"+input+"</a></p>"
+		  	  document.getElementById("content").innerHTML = "The link should have opened in your notes application, if it hasn't please use the link below</p><p> <a href='"+input+"'>"+input+"</a></p>"
 		}
 		</script>
 		
@@ -189,10 +189,11 @@
 								  <li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/E8B6FD5C20A9E6CB80257ED1005094A9 "onclick="loadNote('Notes://D06DBL014/80257EAF0051C680/0A4E99592BC2F648802577C2003DF44B/E8B6FD5C20A9E6CB80257ED1005094A9')"> Email signature setup</a></li>
 
 								</ul>
-
+								<!--Policy Documents Side Menu Bar -->
 								<li data-toggle="collapse" data-target="#PolDoc" class="collapsed">
 								  <a href="#"><i ><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></i> Policy Documents</span></a>
 								</li>  
+								<!-- Policy Documents Sub Side Menu - Add New Policy documents Here -->
 								<ul class="sub-menu collapse" id="PolDoc">
 									<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="http://w3.ibm.com/ibm/values/"  onclick="loadLink('http://w3.ibm.com/ibm/values/')"  target="_blank"> IBM Values at Work</a></li>
 									<li><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><a href="https://w3-connections.ibm.com/wikis/home?lang=en#/wiki/GBS%20Delivery%20Center%20Operating%20Guidelines%20%26%20Attachments" onclick="loadLink('HTTP://LINK')"  target="_blank"> Partnership Attachments Wiki</a></li>
@@ -244,7 +245,7 @@
 				  <div class="page-header">
 					<h3>Operations Portal Home Page</h3>
 				  </div>
-				  <p id = "demo">
+				  <p id = "content">
 					Welcome to the Leicester CIC Operations Portal, the categories to the left will either open links in your Lotus Notes application or they will open w3 pages in a new tab.
 					<div id="fb-root"></div>
 					<script>(function(d, s, id) {
