@@ -9,8 +9,10 @@
 			}
 
 			.navbar-default {
-				background-color: #006699;
-				border-color: #E7E7E7;
+				/*background-color: #006699;
+				border-color: #E7E7E7;*/
+				background-image: url('http://cic_operations_portal_uk.eu-gb.mybluemix.net/images/TestNav.png') !important;
+				background-repeat: repeat-x !important;
 			}
 
 			.navbar-default .navbar-brand {
@@ -32,7 +34,7 @@
 				/*width:12.5%;*/
 				font-family: verdana;
 				font-size: 15px;
-				font-weight: 200;
+				font-weight: 300;
 				padding-top:5px;
 				padding: 2px;
 				color: #FFFFFF;
